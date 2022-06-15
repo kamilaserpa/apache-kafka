@@ -26,7 +26,7 @@ public class KafkaAdminConfig {
 
     @Bean
     public KafkaAdmin.NewTopics topics() {
-//        Ao executar o projeto cria o tópico
+        // Ao executar o projeto cria o tópico
         return new KafkaAdmin.NewTopics(
                 TopicBuilder.name("str-topic").partitions(2).replicas(1).build()
         );
