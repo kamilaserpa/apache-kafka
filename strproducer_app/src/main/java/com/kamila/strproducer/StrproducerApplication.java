@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StrproducerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(com.kamila.strproducer.StrproducerApplication.class, args);
+        SpringApplication.run(StrproducerApplication.class, args);
     }
 
 }
