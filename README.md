@@ -40,6 +40,8 @@ Eventos com a mesma chave são gravados na mesma partição.
 
 ![Tópico com partições P1, P2, P3, P4](https://kafka.apache.org/images/streams-and-tables-p1_p4.png)
 
+Uma partição pode conter zero ou vários grupos de consumo.
+
 #### Developer
 
 [Kamila Serpa](https://kamilaserpa.github.io)
