@@ -16,10 +16,13 @@ public @interface StrConsumerCustomListener {
     @AliasFor(annotation = KafkaListener.class, attribute = "topics")
     String[] topics() default "str-topic";
 
-    @AliasFor(annotation = KafkaListener.class, attribute = "containerFactory")
-    String containerFactory() default "strContainerFactory";
+    @AliasFor(annotation = KafkaListener.class, attribute = "containerFactory") // ao acessar KafkaListener identificamos nome do atributo
+    String containerFactory() default "strContainerFactory"; // nome do método em StringConsumerConfig
 
     @AliasFor(annotation = KafkaListener.class, attribute = "groupId")
     String groupId() default "";
+
+    @AliasFor(annotation = KafkaListener.class, attribute = "errorHandler")
+    String errorHandler() default "errorCustomHandler"; // nome da classe com inicial minúscula (ErrorCustomHandler)
 
 }
