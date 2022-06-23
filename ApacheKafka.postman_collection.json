@@ -7,32 +7,70 @@
 	},
 	"item": [
 		{
-			"name": "Send Message",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"message\": \"Teste send message 1\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "StrProducer",
+			"item": [
+				{
+					"name": "Send Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Teste send message 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/producer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"producer"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/producer",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"producer"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Send Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"idUser\": 20,\n    \"idProduct\": 30,\n    \"cardNumber\": \"1111222233334444\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
