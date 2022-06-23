@@ -1,6 +1,7 @@
 # Apache Kafka
 
 Projeto de estudo do [Apache Kafka](http://kafka.apache.org). O Apache Kafka é uma plataforma de streaming de eventos distribuídos de código aberto (mensageria).
+
 Tecnologias:
  - Apache Kafka
  - Java 11
@@ -8,6 +9,7 @@ Tecnologias:
  - Docker
  - Maven
 
+Projeto base do instrutor: [curso-apache-kafka](https://github.com/ValdirCezar/curso-apache-kafka).
 
 ## Zookeeper e Kafdrop
 
@@ -28,6 +30,7 @@ Obs.:
 Os **produtores** são os aplicativos clientes que publicam (gravam) eventos no Kafka e os **consumidores** são aqueles que assinam (leem e processam) esses eventos.
 
 ### Tópicos
+
 Os eventos são organizados e armazenados de forma durável em **tópicos**, um tópico tem a função de conter mensagens semelhante a uma pasta em um sistema de arquivos.<br>
 Os tópicos no Kafka são sempre multiprodutores e multiassinantes, podem ter zero, um ou muitos produtores/consumidores.<br>
 Os eventos não são excluídos após o consumo. Deve-se definir por quanto tempo o Kafka deve reter seus eventos por meio de uma configuração por tópico.
@@ -35,6 +38,7 @@ Os eventos não são excluídos após o consumo. Deve-se definir por quanto temp
 Para tornar seus dados tolerantes a falhas e altamente disponíveis, todos os tópicos podem ser replicados 
 
 #### Partições
+
 Os tópicos são particionados, divididos em partições importantes para escalabilidade dos dados.<br>
 Eventos com a mesma chave são gravados na mesma partição.
 
@@ -46,14 +50,22 @@ Não é possível haver maior número de grupos de consumo com o mesmo ID, do qu
 ## Docker
 
 Para executar a aplicação através do Docker construa os arquivos `.jar` do produtor [Payment Service](paymentservice_app) e do consumidor [Json Consumer](jsonconsumer_app) através do Maven (`mvn clean package`). <br>
-Construa as imagens docker localmente com `docker build -t <nome-da-aplicacao> .` na pasta de cada aplicação. Siga nomenclatura definida no [docker-compose.yml](docker-compose.yml), mais detalhes no README de cada projeto. <br>
+Construa as imagens docker localmente com `docker build -t <nome-da-aplicacao> .` na pasta de cada aplicação. Siga nomenclatura definida no [docker-compose.yml](docker-compose.yml). Mais detalhes no README de cada projeto.
+
 Execute as imagens com `docker-compose up`.
 
-Para registrar as imagens no Docker Hub, realize login com `docker login`, em seguida faça upload das imagens:
+Para registrar as imagens no Docker Hub, realize login com `docker login`, em seguida faça _upload_ das imagens:
  - `docker push kamilaserpa/payment-service:1.0.0`
  - `docker push kamilaserpa/json-consumer:1.0.0`
 
-Veja as imagens deste projeto registradas no Docker Hub [https://hub.docker.com/repository/docker/kamilaserpa/json-consumer](https://hub.docker.com/repository/docker/kamilaserpa/json-consumer). 
+As imagens deste projeto estão registradas no Docker Hub e podem ser acessadas através dos links: 
+ - [https://hub.docker.com/repository/docker/kamilaserpa/json-consumer](https://hub.docker.com/repository/docker/kamilaserpa/json-consumer);
+ - [https://hub.docker.com/repository/docker/kamilaserpa/payment-service](https://hub.docker.com/repository/docker/kamilaserpa/payment-service). 
+
+![Docker Hub](_images/docker-hub-images.png)
+
+## Spring
+Documentação do Spring de suporte ao Apache Kafka pode ser encontrada em [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) e [Apache Kafka Support](https://docs.spring.io/spring-boot/docs/current/reference/html/messaging.html#messaging.kafka).
 
 ## Developer
 
