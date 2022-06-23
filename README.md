@@ -44,9 +44,16 @@ Uma partição pode conter zero ou vários grupos de consumo.
 Não é possível haver maior número de grupos de consumo com o mesmo ID, do que número de partições, pois algum deles não consegue se inscrever em partição nenhuma.
 
 ## Docker
-Para executar a aplicação através do Docker construa os arquivos `.jar` do produtor [Payment Service](paymentservice_app) e do consumidor [Json Consumer](jsonconsumer_app). <br>
+
+Para executar a aplicação através do Docker construa os arquivos `.jar` do produtor [Payment Service](paymentservice_app) e do consumidor [Json Consumer](jsonconsumer_app) através do Maven (`mvn clean package`). <br>
 Construa as imagens docker localmente com `docker build -t <nome-da-aplicacao> .` na pasta de cada aplicação. Siga nomenclatura definida no [docker-compose.yml](docker-compose.yml), mais detalhes no README de cada projeto. <br>
 Execute as imagens com `docker-compose up`.
+
+Para registrar as imagens no Docker Hub, realize login com `docker login`, em seguida faça upload das imagens:
+ - `docker push kamilaserpa/payment-service:1.0.0`
+ - `docker push kamilaserpa/json-consumer:1.0.0`
+
+Veja as imagens deste projeto registradas no Docker Hub [https://hub.docker.com/repository/docker/kamilaserpa/json-consumer](https://hub.docker.com/repository/docker/kamilaserpa/json-consumer). 
 
 ## Developer
 

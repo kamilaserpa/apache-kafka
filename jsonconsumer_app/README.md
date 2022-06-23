@@ -1,11 +1,12 @@
 # Json Consumer Service
 
-Consumidor das mensagens produzidas pela aplicação Spring Boot [Payment Service App](../paymentservice_app/).
+Consumidor das mensagens produzidas pela aplicação Spring Boot [Payment Service App](../paymentservice_app).
 
 ## Executando a aplicação via Docker
 
 A imagem é construída utilizando o arquivo [Dockerfile](Dockerfile).
-Para construir a imagem localmente: `docker build -t json-consumer .`.
+Para construir a imagem localmente: `docker build -t kamilaserpa/json-consumer:1.0.0 .
+`, ou `docker build -t json-consumer .`.
 
 ### Reference Documentation
 For further reference, please consider the following sections:
