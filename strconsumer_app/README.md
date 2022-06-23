@@ -1,6 +1,6 @@
 # Str Consumer
 
-Aplicação Spring que consome mensagens no Kafka enviada pelo Strproducer.
+Aplicação Spring que consome mensagens Kafka enviadas pela aplicação [Str Producer](../strproducer_app/).
 
 ### Reference Documentation
 For further reference, please consider the following sections:
