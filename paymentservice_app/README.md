@@ -9,6 +9,9 @@ Construindo, onde "kamila" é o usuário do DOcker Hub: `docker build -t kamila/
 
 Para executar container da aplicação: ``.
 
+Variável "KAFKA_HOST", caso não possua valor recebe padrão "localhost:29092" :
+`bootstrap-servers: ${KAFKA_HOST:localhost:29092}`.
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 

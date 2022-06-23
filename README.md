@@ -43,7 +43,12 @@ Eventos com a mesma chave são gravados na mesma partição.
 Uma partição pode conter zero ou vários grupos de consumo.
 Não é possível haver maior número de grupos de consumo com o mesmo ID, do que número de partições, pois algum deles não consegue se inscrever em partição nenhuma.
 
-#### Developer
+## Docker
+Para executar a aplicação através do Docker construa os arquivos `.jar` do produtor [Payment Service](paymentservice_app) e do consumidor [Json Consumer](jsonconsumer_app). <br>
+Construa as imagens docker localmente com `docker build -t <nome-da-aplicacao> .` na pasta de cada aplicação. Siga nomenclatura definida no [docker-compose.yml](docker-compose.yml), mais detalhes no README de cada projeto. <br>
+Execute as imagens com `docker-compose up`.
+
+## Developer
 
 [Kamila Serpa](https://kamilaserpa.github.io)
 

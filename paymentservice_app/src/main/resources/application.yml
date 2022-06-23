@@ -1,10 +1,9 @@
 server:
-  port: 8000
+  port: ${PORT:8000}
 
 spring:
-  kafka:
-    producer:
-      bootstrap-servers: localhost:29092
+  kafka: # retirado producer por estar na mesma rede
+    bootstrap-servers: ${KAFKA_HOST:localhost:29092}
 
   output:
     ansi:
